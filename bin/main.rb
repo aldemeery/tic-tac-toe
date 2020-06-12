@@ -2,13 +2,14 @@
 
 require 'tty-prompt'
 require_relative '../lib/logo'
+require_relative '../lib/helpers'
 
-# cls() # Clear the command line.
+cls # Clear the command line.
 
 puts logo # A method returnin the logo defined in './logo.rb'.
 sleep(1) # Let the players enjoy the logo for one second.
 
-# cls() # Clear the command line.
+cls # Clear the command line.
 
 # Initialize essential variables.
 prompt = TTY::Prompt.new
@@ -29,14 +30,14 @@ loop do
 
   options['Quit'] = :q
 
-  # cls() # Clear the command line.
+  cls # Clear the command line.
 
   # Main menu.
   command = prompt.select('What do you want to do?', options)
 
   # Maybe players don't know they want to play more.
   if command == :q
-    # cls() # Clear the command line.
+    cls # Clear the command line.
     command = prompt.select('Play a bit more? (∩_∩)', { "Yeah, let's rock!" => :y, "Nah, I'll just leave" => :q })
     break if command == :q # Players still want to quit, let's break out the game loop.
 
@@ -53,5 +54,5 @@ loop do
 end
 
 # It's their choice to quit.
-# cls() # Clear the command line.
+cls # Clear the command line.
 puts "Fine! don't come back! (╯°□°)╯ ┻━┻"

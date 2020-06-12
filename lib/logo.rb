@@ -1,4 +1,4 @@
-# Just defining a global variable for the logo.
+# Just defining a method to return the logo
 
 def logo
   "

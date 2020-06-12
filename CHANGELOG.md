@@ -11,3 +11,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Essential dependecies for interface styling.
 - Basic interface.
 - A cool logo.
+- A `cls` method to clear the command line interface.
