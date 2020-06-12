@@ -3,6 +3,7 @@
 require 'tty-prompt'
 require_relative '../lib/logo'
 require_relative '../lib/helpers'
+require_relative '../lib/player'
 
 cls # Clear the command line.
 
@@ -46,7 +47,8 @@ loop do
 
   # Create the players.
   if command == :n
-    # Initialize players.
+    player_x = Player.new(x_symbol, prompt.ask("First player's name: ", required: true))
+    player_o = Player.new(o_symbol, prompt.ask("Second player's name: ", required: true))
   end
 
   # Let the game begin
