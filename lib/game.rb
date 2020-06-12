@@ -2,6 +2,7 @@ require 'tty-table'
 require 'tty-box'
 require 'pastel'
 require_relative './helpers'
+require_relative './engine'
 
 # Defining the Game class.
 class Game
@@ -9,7 +10,8 @@ class Game
     @prompt = prompt
     @player_x = player_x
     @player_o = player_o
-    @dimension = dimension
+    @board = Array.new(dimension**2)
+    @turn = 0 
   end
 
   def start
