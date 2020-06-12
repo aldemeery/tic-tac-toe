@@ -1,5 +1,4 @@
 # Defining the player class.
-
 class Player
   attr_reader :symbol
   attr_reader :name

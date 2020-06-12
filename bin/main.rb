@@ -4,6 +4,7 @@ require 'tty-prompt'
 require_relative '../lib/logo'
 require_relative '../lib/helpers'
 require_relative '../lib/player'
+require_relative '../lib/game'
 
 cls # Clear the command line.
 
@@ -16,7 +17,7 @@ cls # Clear the command line.
 prompt = TTY::Prompt.new
 player_x = nil
 player_o = nil
-n = 3 # Board area: 3 x 3.
+dimension = 3 # Board area: 3 x 3.
 x_symbol = 'X'.freeze
 o_symbol = 'O'.freeze
 
@@ -52,7 +53,9 @@ loop do
   end
 
   # Let the game begin
-  # Initialize the game
+  # Let the game begin
+  game = Game.new(prompt, player_x, player_o, dimension)
+  game.start
 end
 
 # It's their choice to quit.

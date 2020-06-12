@@ -8,8 +8,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 - Project setup.
-- Essential dependecies for interface styling.
+- Essential dependencies for interface styling.
 - Basic interface.
 - A cool logo.
 - A `cls` method to clear the command line interface.
 - `Player` class.
+- `Game` class.
