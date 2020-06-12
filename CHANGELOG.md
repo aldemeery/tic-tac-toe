@@ -10,3 +10,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Project setup.
 - Essential dependecies for interface styling.
 - Basic interface.
+- A cool logo.
