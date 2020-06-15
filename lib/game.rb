@@ -34,25 +34,30 @@ class Game
   private
 
   def next_turn
-    draw_box(@player_x.display_name, 'V.S.', @player_o.display_name, {})
-    draw_table
-
+    update_display
     next_move = prompt_next_move(@taken)
 
     @board[next_move - 1] = current_player
     @taken << next_move
 
-    return current_player if possible_to_win && @engine.evaluate(@board, next_move)
-
+    if possible_to_win && @engine.winning?(@board, next_move)
+      update_display
+      return current_player
+    end
     @turn += 1
-    cls
 
     nil
   end
 
+  def update_display
+    cls
+    draw_box(@player_x.display_name, 'V.S.', @player_o.display_name, {})
+    draw_table
+  end
+
   def display_winner(winner)
     if winner
-      draw_box((winner.display_name + ' is the winner! Hurray!!').colorize(:blue), { width: 50 })
+      draw_box((winner.display_name + ' is the winner! Hurray!!').colorize(:green), { width: 50 })
     else
       draw_box("No one is winning! It's a tie!!".colorize(:yellow), { width: 50 })
     end

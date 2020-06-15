@@ -19,3 +19,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Engine` class.
 - Take inputs interchangebly from players.
 - defining row, column and diagonal? of last move in `Engine` class.
+- The game logic.

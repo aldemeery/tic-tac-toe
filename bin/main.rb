@@ -27,10 +27,10 @@ o_symbol = 'O'.freeze
 loop do
   # Define the options dynamically.
   options = {} # Reset options.
-  options['Play a new game'] = :n
-
   # You shouldn't enter your name if you have done already.
   options['Play again'] = :a if !player_x.nil? && !player_o.nil?
+
+  options['Play a new game'] = :n
 
   options['Quit'] = :q
 
