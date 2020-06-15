@@ -3,6 +3,7 @@ require 'colorize'
 # Defining the player class.
 class Player
   attr_reader :name
+  attr_reader :symbol
 
   def initialize(symbol, name, options = {})
     @symbol = symbol
@@ -14,7 +15,7 @@ class Player
     "#{@name} (#{@symbol})".colorize(@color)
   end
 
-  def symbol
+  def display_symbol
     @symbol.colorize(@color)
   end
 end

@@ -42,7 +42,7 @@ class Game
     @board[next_move - 1] = current_player
     @taken << next_move
 
-    return current_player if possible_to_win && @engine.evaluate(@board)
+    return current_player if possible_to_win && @engine.evaluate(@board, next_move)
 
     @turn += 1
     cls
