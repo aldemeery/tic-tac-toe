@@ -17,3 +17,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Player` class.
 - `Game` class.
 - `Engine` class.
+- Take inputs interchangebly from players.

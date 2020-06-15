@@ -5,6 +5,7 @@ require_relative '../lib/logo'
 require_relative '../lib/helpers'
 require_relative '../lib/player'
 require_relative '../lib/game'
+require_relative '../lib/engine'
 
 cls # Clear the command line.
 
@@ -15,6 +16,7 @@ cls # Clear the command line.
 
 # Initialize essential variables.
 prompt = TTY::Prompt.new
+engine = Engine.new
 player_x = nil
 player_o = nil
 dimension = 3 # Board area: 3 x 3.
@@ -48,16 +50,15 @@ loop do
 
   # Create the players.
   if command == :n
-    player_x = Player.new(x_symbol, prompt.ask("First player's name: ", required: true))
-    player_o = Player.new(o_symbol, prompt.ask("Second player's name: ", required: true))
+    player_x = Player.new(x_symbol, prompt.ask("First player's name: ", required: true), { color: :cyan })
+    player_o = Player.new(o_symbol, prompt.ask("Second player's name: ", required: true), { color: :magenta })
   end
 
   # Let the game begin
   # Let the game begin
-  game = Game.new(prompt, player_x, player_o, dimension)
+  game = Game.new(prompt, player_x, player_o, engine, dimension)
   game.start
 end
 
 # It's their choice to quit.
-cls # Clear the command line.
 puts "Fine! don't come back! (╯°□°)╯ ┻━┻"

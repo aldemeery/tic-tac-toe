@@ -1,6 +1,7 @@
 GEM
   remote: https://rubygems.org/
   specs:
+    colorize (0.8.1)
     equatable (0.6.1)
     necromancer (0.5.1)
     pastel (0.7.4)
@@ -38,12 +39,13 @@ GEM
 
 PLATFORMS
   ruby
+  x64-mingw32
 
 DEPENDENCIES
-  pastel (~> 0.7.4)
+  colorize (~> 0.8.1)
   tty-box (~> 0.5.0)
   tty-prompt (~> 0.21.0)
   tty-table (~> 0.11.0)
 
 BUNDLED WITH
-   1.17.2
+   2.1.4
