@@ -59,7 +59,7 @@ class Game
   end
 
   def possible_to_win
-    @turn >= (@dimension * 2) - 1
+    @turn >= (@dimension * 2) - 2
   end
 
   def draw_box(*args, options)
@@ -95,7 +95,7 @@ class Game
 
   def parse_row(row, row_index)
     row.map!.with_index do |cell, cell_index|
-      cell.nil? ? ((cell_index + 1) + (row_index * @dimension)).to_s : cell.symbol
+      cell.nil? ? ((cell_index + 1) + (row_index * @dimension)).to_s : cell.display_symbol
     end
   end
 

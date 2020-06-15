@@ -9,7 +9,8 @@ class Engine
     @last_move = last_move
     row = row
     column = column
-    diagonal? = diagonal?(column, row)
+    if diagonal?(column, row)
+    end
   end
 
   private
