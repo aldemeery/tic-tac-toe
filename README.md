@@ -23,6 +23,10 @@ Tic-Tac-Toe game implemented in Ruby.
 - Twitter: [@aldemeery](https://twitter.com/aldemeery)
 - Linkedin: [osamaaldemeery](https://linkedin.com/in/osamaaldemeery)
 
+# About Tic Tac Toe Game
+
+It's game in which two players alternately put Xs and Os in compartments of a figure formed by two vertical lines crossing two horizontal lines and each tries to get a row of three Xs or three Os before the opponent does. A extremely gangsta game.
+
 ## RULES FOR TIC-TAC-TOE
 
 1. The game is played on a grid that's 3 squares by 3 squares.
