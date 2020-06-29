@@ -21,3 +21,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - defining row, column and diagonal? of last move in `Engine` class.
 - The game logic.
 - Game Instructions readme file.
+- Test the engine class.

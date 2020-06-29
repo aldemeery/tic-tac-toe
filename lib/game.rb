@@ -1,7 +1,6 @@
 require 'tty-table'
 require 'tty-box'
 require 'pastel'
-require 'pry'
 require 'colorize'
 require_relative './helpers'
 
