@@ -8,7 +8,7 @@ describe Engine do
   let(:secondPlayer) { Player.new('O', 'John') }
 
   describe '#winning' do
-    it 'returns true when there is a winner' do
+    it 'returns true when there is a horizontal winner' do
       board = [
         firstPlayer, firstPlayer, firstPlayer,
         secondPlayer, secondPlayer, nil,
@@ -16,6 +16,26 @@ describe Engine do
       ]
 
       expect(engine.winning?(board, 3)).to eql(true)
+    end
+
+    it 'returns true when there is a vertical winner' do
+      board = [
+        firstPlayer, secondPlayer, secondPlayer,
+        firstPlayer, nil, nil,
+        firstPlayer, nil, nil
+      ]
+
+      expect(engine.winning?(board, 7)).to eql(true)
+    end
+
+    it 'returns true when there is a diagonal winner' do
+      board = [
+        firstPlayer, secondPlayer, secondPlayer,
+        nil, firstPlayer, nil,
+        nil, nil, firstPlayer
+      ]
+
+      expect(engine.winning?(board, 9)).to eql(true)
     end
 
     it 'returns false when there is no winner' do

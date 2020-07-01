@@ -23,3 +23,5 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Game Instructions readme file.
 - Test the engine class.
 - Test the player class.
+- Test the game class.
+- Game design refactoring.
