@@ -27,6 +27,12 @@ Tic-Tac-Toe game implemented in Ruby.
 
 It's game in which two players alternately put Xs and Os in compartments of a figure formed by two vertical lines crossing two horizontal lines and each tries to get a row of three Xs or three Os before the opponent does. A extremely gangsta game.
 
+## Testing
+Open your command line in the root directory of the cloned repository, then issue the command:
+```bash
+rspec .
+```
+
 ## RULES FOR TIC-TAC-TOE
 
 1. The game is played on a grid that's 3 squares by 3 squares.
@@ -59,8 +65,7 @@ the game ends and is a tie.
 
 ## TRICKS & SECRETS
 
-Do you wanna feel like a hacker? try to change the dimension variable of the board area in the main.rb file
-and get a more intense experience.
+Do you wanna feel like a hacker? try to change the dimension variable of the board area in the Game class constructor and get a more intense experience.
 
 ## Contributing
 
