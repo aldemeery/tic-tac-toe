@@ -1,26 +1,56 @@
 require 'tty-table'
 require 'tty-box'
 require 'pastel'
-require 'pry'
 require 'colorize'
 require_relative './helpers'
+require_relative './player'
 
 # Defining the Game class.
 class Game
-  def initialize(prompt, player_x, player_o, engine, dimension = 3)
+  attr_reader :prompt, :engine, :player_x, :player_o, :dimension
+
+  def initialize(prompt, engine, player_x = nil, player_o = nil, dimension = 3)
     @prompt = prompt
+    @engine = engine
     @player_x = player_x
     @player_o = player_o
-    @engine = engine
-    @dimension = dimension
-    @board = Array.new(dimension**2)
-    @turn = 0
-    @taken = []
+    @dimension = dimension || 3
+    reset
+  end
+
+  def run
+    loop do
+      options = set_options
+      cls
+      command = @prompt.select('What do you want to do?', options)
+
+      if command == :q
+        break if sure # Players still want to quit, let's break out the game loop.
+
+        next # Players changed their mind :D.
+      end
+
+      if command == :n
+        @player_x = Player.new('X', @prompt.ask("First player's name: ", required: true), { color: :cyan })
+        @player_o = Player.new('O', @prompt.ask("Second player's name: ", required: true), { color: :magenta })
+      end
+
+      start
+    end
+  end
+
+  private
+
+  def sure
+    cls
+    @prompt.select('Play a bit more? (∩_∩)', { "Yeah, let's rock!" => :y, "Nah, I'll just leave" => :q }) == :q
   end
 
   def start
+    reset
     cls
     winner = nil
+
     while @board.any?(nil)
       if (winner = next_turn)
         break
@@ -31,7 +61,20 @@ class Game
     @prompt.keypress('Press any key to continue...')
   end
 
-  private
+  def set_options
+    options = {} # Reset options.
+    options['Play again'] = :a if !@player_x.nil? && !@player_o.nil?
+    options['Play a new game'] = :n
+    options['Quit'] = :q
+
+    options
+  end
+
+  def reset
+    @board = Array.new(@dimension**2)
+    @turn = 0
+    @taken = []
+  end
 
   def next_turn
     update_display
